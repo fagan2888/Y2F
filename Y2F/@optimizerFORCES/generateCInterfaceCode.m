@@ -57,7 +57,7 @@ fprintf(hFileID, '#define __%s_H__\n\n',solverName);
 
 % Visual Studio 2015 Compatibility
 fprintf(hFileID, '/* For Visual Studio 2015 Compatibility */\n');
-fprintf(hFileID, '#if _MSC_VER == 1900\n');
+fprintf(hFileID, '#if _MSC_VER >= 1900\n');
 fprintf(hFileID, 'FILE * __cdecl __iob_func(void);\n');
 fprintf(hFileID, '#endif\n');
 
@@ -269,7 +269,7 @@ fprintf(cFileID, '#include <stdio.h>\n\n');
 
 % Visual Studio 2015 Compatibility
 fprintf(cFileID, '/* For Visual Studio 2015 Compatibility */\n');
-fprintf(cFileID, '#if _MSC_VER == 1900\n');
+fprintf(cFileID, '#if _MSC_VER >= 1900\n');
 fprintf(cFileID, 'FILE _iob[3];\n');
 fprintf(cFileID, 'FILE * __cdecl __iob_func(void)\n');
 fprintf(cFileID, '{\n');
